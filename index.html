@@ -3,130 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arambagh Super Shop | Online Grocery</title>
-    <!-- Google Fonts & FontAwesome for Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Arambagh Super Shop | Premium Online Mega Store</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Modern Glassmorphism Navigation Bar -->
     <header>
         <div class="navbar">
             <div class="logo">
-                <h2><i class="fa-solid fa-basket-shopping"></i> Arambagh <span>Super Shop</span></h2>
+                <h2><i class="fa-solid fa-bolt"></i> Arambagh<span>MegaShop</span></h2>
             </div>
-            <div class="search-box">
-                <input type="text" placeholder="নিত্যপ্রয়োজনীয় পণ্য খুঁজুন...">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-            <div class="cart-icon" onclick="toggleCart()">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cart-count">0</span>
+            <nav class="nav-links">
+                <a href="#hero"><i class="fa-solid fa-house"></i> হোম</a>
+                <a href="#shop"><i class="fa-solid fa-bag-shopping"></i> শপ</a>
+                <a href="#about"><i class="fa-solid fa-circle-info"></i> আমাদের সম্পর্কে</a>
+                <a href="#contact"><i class="fa-solid fa-headset"></i> যোগাযোগ</a>
+            </nav>
+            <div class="nav-right">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span id="cart-count">0</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Banner -->
-    <section class="hero">
+    <!-- Futuristic Hero Section -->
+    <section id="hero" class="hero">
         <div class="hero-content">
-            <h1>সেরা দামে ফ্রেশ বাজার</h1>
-            <p>আরামবাগ সুপার শপ থেকে কিনুন একদম খাঁটি ও টাটকা গ্রোসারি আইটেম।</p>
-            <a href="#products" class="btn-shop">এখনই কিনুন</a>
+            <span class="tagline"><i class="fa-solid fa-star"></i> এক ছাদের নিচে সবকিছু</span>
+            <h1>Arambagh Super Shop</h1>
+            <p>বিস্কুট, চকলেট, খেলনা, বডি স্প্রে, কসমেটিকস থেকে শুরু করে প্রতিদিনের নিত্যপ্রয়োজনীয় সব পণ্য পাচ্ছেন সবচেয়ে কম দামে ও দ্রুততম ডেলিভারিতে।</p>
+            <a href="#shop" class="btn-primary">বাজার করুন <i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </section>
 
-    <!-- Main Products Section -->
-    <main id="products">
-        <h2 class="section-title">আমাদের বিশেষ পণ্যসমূহ</h2>
+    <!-- Super Shop Mega Inventory Layout -->
+    <main id="shop">
+        <div class="section-header">
+            <h2>আমাদের মেগা কালেকশন</h2>
+            <p>ক্যাটাগরি সিলেক্ট করে আপনার পছন্দের পণ্যটি সহজেই কার্টে যোগ করুন</p>
+        </div>
+
+        <!-- Modern Category Tabs Slider -->
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterCategory('all')">সব পণ্য</button>
+            <button class="tab-btn" onclick="filterCategory('biscuit')">বিস্কুট ও চকলেট</button>
+            <button class="tab-btn" onclick="filterCategory('cosmetics')">ক্রিম ও বডি স্প্রে</button>
+            <button class="tab-btn" onclick="filterCategory('toys')">খেলনা (Toys)</button>
+            <button class="tab-btn" onclick="filterCategory('grocery')">গ্রোসারি ও অন্যান্য</button>
+        </div>
+
+        <!-- Dynamic Responsive Product Grid -->
         <div class="product-grid">
             
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="badge">অফার</div>
-                <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=400" alt="Miniket Rice">
-                <h3>মিনিকেট চাল (প্রিমিয়াম)</h3>
-                <p class="unit">৫ কেজি</p>
-                <div class="price">৳৪৫০ <span class="old-price">৳৪৮০</span></div>
-                <button class="add-to-cart" onclick="addToCart('মিনিকেট চাল (৫ কেজি)', 450)">কার্টে যোগ করুন</button>
+            <!-- Biscuits & Chocolates -->
+            <div class="product-card" data-category="biscuit">
+                <div class="badge">১০% ছাড়</div>
+                <img src="https://images.unsplash.com/photo-1558961312-50345c081645?auto=format&fit=crop&q=80&w=400" alt="Premium Biscuit">
+                <h3>লেক্সাস বিস্কুট প্যাক</h3>
+                <p class="unit">ফ্যামিলি প্যাক</p>
+                <div class="price">৳১২০ <span class="old-price">৳১৩৫</span></div>
+                <button class="add-to-cart" onclick="addToCart('লেক্সাস বিস্কুট প্যাক', 120)">কার্টে যোগ করুন</button>
             </div>
 
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=400" alt="Mustard Oil">
-                <h3>খাঁটি সরিষার তেল</h3>
-                <p class="unit">১ লিটার</p>
-                <div class="price">৳২৪০</div>
-                <button class="add-to-cart" onclick="addToCart('খাঁটি সরিষার তেল', 240)">কার্টে যোগ করুন</button>
+            <div class="product-card" data-category="biscuit">
+                <img src="https://images.unsplash.com/photo-1548907040-4d42b52145ca?auto=format&fit=crop&q=80&w=400" alt="Dairy Milk">
+                <h3>ক্যাডবেরি ডেইরি মিল্ক</h3>
+                <p class="unit">১ পিস (বড়)</p>
+                <div class="price">৳১৮০</div>
+                <button class="add-to-cart" onclick="addToCart('ক্যাডবেরি ডেইরি মিল্ক', 180)">কার্টে যোগ করুন</button>
             </div>
 
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400" alt="Lentils">
-                <h3>দেশী মসুর ডাল</h3>
-                <p class="unit">১ কেজি</p>
-                <div class="price">৳১৪০</div>
-                <button class="add-to-cart" onclick="addToCart('দেশী মসুর ডাল', 140)">কার্টে যোগ করুন</button>
+            <!-- Cosmetics & Body Spray -->
+            <div class="product-card" data-category="cosmetics">
+                <div class="badge">Hot</div>
+                <img src="https://images.unsplash.com/photo-1594125356681-79ec46bc20e2?auto=format&fit=crop&q=80&w=400" alt="Body Spray">
+                <h3>ফগ বডি স্প্রে (Fogg)</h3>
+                <p class="unit">১২০ মিলি</p>
+                <div class="price">৳৩৫০</div>
+                <button class="add-to-cart" onclick="addToCart('ফগ বডি স্প্রে', 350)">কার্টে যোগ করুন</button>
             </div>
 
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="badge">নতুন</div>
-                <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&q=80&w=400" alt="Bananas">
-                <h3>ফ্রেশ সাগর কলা</h3>
-                <p class="unit">১ ডজন</p>
-                <div class="price">৳৯০ <span class="old-price">৳১০০</span></div>
-                <button class="add-to-cart" onclick="addToCart('ফ্রেশ সাগর কলা', 90)">কার্টে যোগ করুন</button>
+            <div class="product-card" data-category="cosmetics">
+                <img src="https://images.unsplash.com/photo-1608248597481-496100c8c836?auto=format&fit=crop&q=80&w=400" alt="Face Cream">
+                <h3>নিভিয়া সফট ক্রিম</h3>
+                <p class="unit">১০০ মিলি</p>
+                <div class="price">৳২৪০ <span class="old-price">৳২৬০</span></div>
+                <button class="add-to-cart" onclick="addToCart('নিভিয়া সফট ক্রিম', 240)">কার্টে যোগ করুন</button>
+            </div>
+
+            <!-- Toys -->
+            <div class="product-card" data-category="toys">
+                <img src="https://images.unsplash.com/photo-1594787318286-3d835c1d207f?auto=format&fit=crop&q=80&w=400" alt="Teddy Bear">
+                <h3>কিউট টেডি বেয়ার খেলনা</h3>
+                <p class="unit">১ পিস</p>
+                <div class="price">৳৪৫০</div>
+                <button class="add-to-cart" onclick="addToCart('কিউট টেডি বেয়ার খেলনা', 450)">কার্টে যোগ করুন</button>
+            </div>
+
+            <!-- Grocery & Medical Antiseptic -->
+            <div class="product-card" data-category="grocery">
+                <img src="https://images.unsplash.com/photo-1607619056574-7b8d304f3c6f?auto=format&fit=crop&q=80&w=400" alt="Antiseptic">
+                <h3>স্যাভলন লিকুইড এন্টিসেপ্টিক</h3>
+                <p class="unit">৫০০ মিলি</p>
+                <div class="price">৳১৮৫</div>
+                <button class="add-to-cart" onclick="addToCart('স্যাভলন এন্টিসেপ্টিক', 185)">কার্টে যোগ করুন</button>
             </div>
 
         </div>
     </main>
 
-    <!-- Floating Shopping Cart (Sidebar) -->
+    <!-- Elegant Integrated About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <span class="sub-title">আমাদের গল্প</span>
+                <h2>কেন আরামবাগ মেগা শপ সেরা?</h2>
+                <p>আমরা বিশ্বাস করি গুণগত মানে। আরামবাগ সুপার শপ আপনাকে দিচ্ছে আপনার ঘরের প্রয়োজনীয় ছোট থেকে বড় প্রতিটি জিনিস সহজে এক জায়গাতেই পাওয়ার নিশ্চয়তা। বিস্কুট-চকলেট, কসমেটিকস কিংবা বাচ্চার খেলনা—সবকিছুই পাবেন ১০০% অরিজিনাল ব্র্যান্ডের।</p>
+                <div class="features-mini">
+                    <div class="f-item"><i class="fa-solid fa-truck-fast"></i> সুপার ফাস্ট ডেলিভারি</div>
+                    <div class="f-item"><i class="fa-solid fa-shield-halved"></i> খাঁটি পণ্যের গ্যারান্টি</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional 3D-Look Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>যোগাযোগ করুন</h2>
+                <p>যেকোনো জিজ্ঞাসা বা হোম ডেলিভারির জন্য সরাসরি কল অথবা মেসেজ করুন।</p>
+                <div class="info-link"><i class="fa-solid fa-location-dot"></i> আরামবাগ মেইন রোড, ঢাকা, বাংলাদেশ</div>
+                <div class="info-link"><i class="fa-solid fa-phone"></i> +৮৮০ ১৭XXXXXXXX</div>
+                <div class="info-link"><i class="fa-solid fa-envelope"></i> support@arambagh.com</div>
+            </div>
+            <div class="contact-form-box">
+                <form onsubmit="alert('আপনার মেসেজ সফলভাবে পাঠানো হয়েছে!'); event.preventDefault();">
+                    <input type="text" placeholder="আপনার নাম" required>
+                    <input type="email" placeholder="ইমেইল" required>
+                    <textarea placeholder="আপনার বার্তা লিখুন..." required></textarea>
+                    <button type="submit" class="btn-submit">মেসেজ পাঠান</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Cart Drawer Backend Panel (Same Sidebar) -->
     <div id="cart-sidebar" class="cart-sidebar">
         <div class="cart-header">
-            <h3>আপনার কার্ট</h3>
+            <h3>আপনার ঝুড়ি (Cart)</h3>
             <span class="close-cart" onclick="toggleCart()">&times;</span>
         </div>
         <div id="cart-items" class="cart-items-container">
-            <!-- Items will be added dynamically via JS -->
             <p class="empty-msg">কার্ট খালি আছে</p>
         </div>
         <div class="cart-footer">
-            <div class="total-price">মোট: ৳<span id="total-amount">0</span></div>
+            <div class="total-price">মোট মূল্য: ৳<span id="total-amount">0</span></div>
             <button class="checkout-btn" onclick="openCheckout()">অর্ডার কনফার্ম করুন</button>
         </div>
     </div>
 
-    <!-- Checkout Popup Modal -->
+    <!-- Checkout Modal Popup -->
     <div id="checkout-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeCheckout()">&times;</span>
-            <h2><i class="fa-solid fa-truck"></i> ডেলিভারি তথ্য দিন</h2>
+            <h2> ডেলভারি ফর্ম পূরণ করুন</h2>
             <form id="order-form" onsubmit="submitOrder(event)">
-                <input type="text" id="name" placeholder="আপনার নাম" required>
+                <input type="text" id="name" placeholder="নাম" required>
                 <input type="tel" id="phone" placeholder="মোবাইল নম্বর" required>
-                <textarea id="address" placeholder="পূর্ণাঙ্গ ঠিকানা" required></textarea>
-                <p class="payment-method">পেমেন্ট পদ্ধতি: <strong>ক্যাশ অন ডেলিভারি (COD)</strong></p>
-                <button type="submit" class="confirm-order-btn">অর্ডার সম্পন্ন করুন</button>
+                <textarea id="address" placeholder="ডেলিভারি ঠিকানা" required></textarea>
+                <button type="submit" class="confirm-order-btn">অর্ডার শেষ করুন</button>
             </form>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <!-- Footer Links (index.html এর নিচে যুক্ত করুন) -->
-<footer style="background: #222; color: #888; text-align: center; padding: 30px; font-size: 14px; margin-top: 50px;">
-    <div style="margin-bottom: 15px;">
-        <a href="about.html" style="color: #bbb; text-decoration: none; margin: 0 15px;">আমাদের সম্পর্কে</a> | 
-        <a href="contact.html" style="color: #bbb; text-decoration: none; margin: 0 15px;">যোগাযোগ</a>
-    </div>
-    <p>&copy; 2026 Arambagh Super Shop. All Rights Reserved.</p>
-</footer>
-        <p>&copy; 2026 Arambagh Super Shop. All Rights Reserved.</p>
+        <p>&copy; 2026 Arambagh MegaShop. Powered by Modern Standard UI.</p>
     </footer>
 
+    <!-- JavaScript Filter Controller functionality -->
+    <script>
+        function filterCategory(category) {
+            // Update active buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter system
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
