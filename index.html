@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arambagh Super Shop | Online Grocery</title>
+    <!-- Google Fonts & FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h2><i class="fa-solid fa-basket-shopping"></i> Arambagh <span>Super Shop</span></h2>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="নিত্যপ্রয়োজনীয় পণ্য খুঁজুন...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>সেরা দামে ফ্রেশ বাজার</h1>
+            <p>আরামবাগ সুপার শপ থেকে কিনুন একদম খাঁটি ও টাটকা গ্রোসারি আইটেম।</p>
+            <a href="#products" class="btn-shop">এখনই কিনুন</a>
+        </div>
+    </section>
+
+    <!-- Main Products Section -->
+    <main id="products">
+        <h2 class="section-title">আমাদের বিশেষ পণ্যসমূহ</h2>
+        <div class="product-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="badge">অফার</div>
+                <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=400" alt="Miniket Rice">
+                <h3>মিনিকেট চাল (প্রিমিয়াম)</h3>
+                <p class="unit">৫ কেজি</p>
+                <div class="price">৳৪৫০ <span class="old-price">৳৪৮০</span></div>
+                <button class="add-to-cart" onclick="addToCart('মিনিকেট চাল (৫ কেজি)', 450)">কার্টে যোগ করুন</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=400" alt="Mustard Oil">
+                <h3>খাঁটি সরিষার তেল</h3>
+                <p class="unit">১ লিটার</p>
+                <div class="price">৳২৪০</div>
+                <button class="add-to-cart" onclick="addToCart('খাঁটি সরিষার তেল', 240)">কার্টে যোগ করুন</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=400" alt="Lentils">
+                <h3>দেশী মসুর ডাল</h3>
+                <p class="unit">১ কেজি</p>
+                <div class="price">৳১৪০</div>
+                <button class="add-to-cart" onclick="addToCart('দেশী মসুর ডাল', 140)">কার্টে যোগ করুন</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="badge">নতুন</div>
+                <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&q=80&w=400" alt="Bananas">
+                <h3>ফ্রেশ সাগর কলা</h3>
+                <p class="unit">১ ডজন</p>
+                <div class="price">৳৯০ <span class="old-price">৳১০০</span></div>
+                <button class="add-to-cart" onclick="addToCart('ফ্রেশ সাগর কলা', 90)">কার্টে যোগ করুন</button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Floating Shopping Cart (Sidebar) -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>আপনার কার্ট</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items" class="cart-items-container">
+            <!-- Items will be added dynamically via JS -->
+            <p class="empty-msg">কার্ট খালি আছে</p>
+        </div>
+        <div class="cart-footer">
+            <div class="total-price">মোট: ৳<span id="total-amount">0</span></div>
+            <button class="checkout-btn" onclick="openCheckout()">অর্ডার কনফার্ম করুন</button>
+        </div>
+    </div>
+
+    <!-- Checkout Popup Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCheckout()">&times;</span>
+            <h2><i class="fa-solid fa-truck"></i> ডেলিভারি তথ্য দিন</h2>
+            <form id="order-form" onsubmit="submitOrder(event)">
+                <input type="text" id="name" placeholder="আপনার নাম" required>
+                <input type="tel" id="phone" placeholder="মোবাইল নম্বর" required>
+                <textarea id="address" placeholder="পূর্ণাঙ্গ ঠিকানা" required></textarea>
+                <p class="payment-method">পেমেন্ট পদ্ধতি: <strong>ক্যাশ অন ডেলিভারি (COD)</strong></p>
+                <button type="submit" class="confirm-order-btn">অর্ডার সম্পন্ন করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Arambagh Super Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
