@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>যোগাযোগ | Arambagh Super Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-container { max-width: 900px; margin: 50px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 20px; }
+        .contact-box { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .contact-box h3 { color: #2e7d32; margin-bottom: 15px; }
+        .contact-box p { margin-bottom: 10px; color: #555; }
+        .contact-box i { color: #e65100; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h2><a href="index.html" style="text-decoration:none; color:inherit;"><i class="fa-solid fa-basket-shopping"></i> Arambagh <span>Super Shop</span></a></h2>
+            </div>
+            <a href="index.html" class="btn-shop" style="padding: 8px 20px;">হোম পেজ</a>
+        </div>
+    </header>
+
+    <div class="contact-container">
+        <div class="contact-box">
+            <h3>আমাদের ঠিকানা</h3>
+            <p><i class="fa-solid fa-location-dot"></i> আরামবাগ মেইন রোড, ঢাকা, বাংলাদেশ</p>
+            <p><i class="fa-solid fa-phone"></i> +৮৮০ ১৭XXXXXXXX</p>
+            <p><i class="fa-solid fa-envelope"></i> info@arambaghsupershop.com</p>
+        </div>
+        <div class="contact-box">
+            <h3>আমাদের মেসেজ দিন</h3>
+            <form onsubmit="alert('আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে!'); event.preventDefault();">
+                <input type="text" placeholder="আপনার নাম" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:6px;" required>
+                <input type="email" placeholder="ইমেইল এড্রেস" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:6px;" required>
+                <textarea placeholder="আপনার মতামত বা জিজ্ঞাসা..." style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:6px; height:100px;" required></textarea>
+                <button class="add-to-cart" type="submit">মেসেজ পাঠান</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Arambagh Super Shop. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
